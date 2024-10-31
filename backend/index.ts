@@ -73,51 +73,51 @@ app.get('/public-key', async (req, res) => {
 
 
 // Send transactions
-app.post('/send-test/', async (req, res) => {
-  let result;
+// app.post('/send-test/', async (req, res) => {
+//   let result;
 
-  try {
-    const { to, amount, chain, mpcPath } = req.body;
-    switch (chain) {
-      case 'ETH':
-        const { address: ethAddress } = await genAddress('ETH', mpcPath);
-        result = await ethereum.send({ from: ethAddresslocalhost, to, amount }, mpcPath);
-        break;
-      case 'BASE':
-        const { address: baseAddress } = await genAddress('ETH');
-        ethereum.setChain(baseChainConfig);
-        result = await ethereum.send({ from: baseAddress, to, amount }, mpcPath);
-        break;
-      // case 'BTC':
-      //     const { address: btcAddress, publicKey: btcPublicKey } = await genAddress('bitcoin');
-      //     result = await bitcoin.send({ from: btcAddress, publicKey: btcPublicKey, to, amount });
-      //     break;
-      // case 'DOGE':
-      //     const { address: dogeAddress, publicKey: dogePublicKey } = await genAddress('DOGE', "cuong");
-      //     result = await dogecoin.send({ from: dogeAddress, publicKey: dogePublicKey, to, amount }, "cuong");
-      //     break;
+//   try {
+//     const { to, amount, chain, mpcPath } = req.body;
+//     switch (chain) {
+//       case 'ETH':
+//         const { address: ethAddress } = await genAddress('ETH', mpcPath);
+//         result = await ethereum.send({ from: ethAddress, to, amount }, mpcPath);
+//         break;
+//       case 'BASE':
+//         const { address: baseAddress } = await genAddress('ETH');
+//         ethereum.setChain(baseChainConfig);
+//         result = await ethereum.send({ from: baseAddress, to, amount }, mpcPath);
+//         break;
+//       // case 'BTC':
+//       //     const { address: btcAddress, publicKey: btcPublicKey } = await genAddress('bitcoin');
+//       //     result = await bitcoin.send({ from: btcAddress, publicKey: btcPublicKey, to, amount });
+//       //     break;
+//       // case 'DOGE':
+//       //     const { address: dogeAddress, publicKey: dogePublicKey } = await genAddress('DOGE', "cuong");
+//       //     result = await dogecoin.send({ from: dogeAddress, publicKey: dogePublicKey, to, amount }, "cuong");
+//       //     break;
 
 
-      case 'DOGE':
-        const { address: dogeAddress, publicKey: dogePublicKey } = await genAddress('DOGE', mpcPath)
-        result = await dogecoin.send({ from: dogeAddress, publicKey: dogePublicKey, to, amount }, mpcPath);
-        break;
+//       case 'DOGE':
+//         const { address: dogeAddress, publicKey: dogePublicKey } = await genAddress('DOGE', mpcPath)
+//         result = await dogecoin.send({ from: dogeAddress, publicKey: dogePublicKey, to, amount }, mpcPath);
+//         break;
 
-      default:
-        return res.status(400).json({ status: "failed", error: 'Unsupported chain' });
-    }
-  } catch (error) {
-    return res.status(500).json({
-      status: "failed",
-      error: error.message || 'Internal server error'
-    });
-  }
+//       default:
+//         return res.status(400).json({ status: "failed", error: 'Unsupported chain' });
+//     }
+//   } catch (error) {
+//     return res.status(500).json({
+//       status: "failed",
+//       error: error.message || 'Internal server error'
+//     });
+//   }
 
-  res.json({
-    status: "success",
-    result
-  });
-});
+//   res.json({
+//     status: "success",
+//     result
+//   });
+// });
 
 app.post('/get-balance/:chain/:address', async (req, res) => {
   const { chain, address } = req.params;
