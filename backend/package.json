@@ -1,10 +1,12 @@
 {
-    "name": "mpc-script",
+    "name": "go-for-it-backend",
     "version": "0.0.1",
     "license": "MIT",
     "scripts": {
         "start": "tsc-watch --onSuccess 'node --trace-deprecation --env-file .env ./dist/index.js'",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "build": "tsc",
+        "vercel-build": "tsc"
     },
     "devDependencies": {
         "@cosmjs/amino": "^0.31.3",

@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -81,7 +81,7 @@ app.post('/send-test/', async (req, res) => {
     switch (chain) {
       case 'ETH':
         const { address: ethAddress } = await genAddress('ETH', mpcPath);
-        result = await ethereum.send({ from: ethAddress, to, amount }, mpcPath);
+        result = await ethereum.send({ from: ethAddresslocalhost, to, amount }, mpcPath);
         break;
       case 'BASE':
         const { address: baseAddress } = await genAddress('ETH');
