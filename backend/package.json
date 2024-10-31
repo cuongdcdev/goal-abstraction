@@ -3,10 +3,8 @@
     "version": "0.0.1",
     "license": "MIT",
     "scripts": {
-        "start": "tsc-watch --onSuccess 'node --trace-deprecation --env-file .env ./dist/index.js'",
-        "format": "prettier --write .",
-        "build": "tsc",
-        "vercel-build": "pnpm start && tsc"
+        "start": "yarn tsc && node --trace-deprecation --env-file .env ./dist/index.js",
+        "format": "prettier --write ."
     },
     "devDependencies": {
         "@cosmjs/amino": "^0.31.3",
@@ -38,12 +36,10 @@
         "xrpl": "^3.0.0"
     },
     "dependencies": {
-        "@tatumio/tatum": "^4.2.43",
         "audit": "^0.0.6",
         "express": "^4.21.1",
         "js-sha3": "^0.9.3",
-        "near-seed-phrase": "^0.2.1",
-        "secp256k1": "^5.0.1",
-        "tsc-watch": "^6.2.0"
-    }
+        "near-seed-phrase": "^0.2.1"
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
