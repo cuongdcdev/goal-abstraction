@@ -1,0 +1,6 @@
+DEFINE_NEAR_METHOD(create)
+DEFINE_NEAR_METHOD(finalize)
+DEFINE_NEAR_METHOD(get_all_challenges)
+DEFINE_NEAR_METHOD(get_challenge_by_id)
+DEFINE_NEAR_METHOD(init)
+DEFINE_NEAR_METHOD(set_service_fee)

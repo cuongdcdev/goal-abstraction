@@ -1,0 +1,53 @@
+.challengeCard {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+  
+  .sectionCard {
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }
+  
+  .sectionCard:hover {
+    transform: translateY(-2px);
+  }
+  
+  .prizeAmount {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .actionButton {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .actionButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  }
+  
+  .deadlineContainer {
+    position: relative;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.8);
+    border-left: 4px solid #3b82f6;
+  }
+  
+  .supervisorSection {
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
