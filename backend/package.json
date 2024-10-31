@@ -6,7 +6,7 @@
         "start": "tsc-watch --onSuccess 'node --trace-deprecation --env-file .env ./dist/index.js'",
         "format": "prettier --write .",
         "build": "tsc",
-        "vercel-build": "tsc"
+        "vercel-build": "pnpm start && tsc"
     },
     "devDependencies": {
         "@cosmjs/amino": "^0.31.3",
